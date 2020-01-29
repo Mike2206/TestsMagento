@@ -18,6 +18,7 @@ public class OrbaTest extends Initial {
     //Wariables
     private String urlAddress1 = "https://orba.co/";
     private String urlAddress2 = "https://orba.pl/";
+    private String urlAddress3 = "https://orba.co/user-experience-audit/";
     private String userName = "AUTOMATIONORBA";
     private String userCompany = "AUTOMATIONORBA";
     private String emailAdress = "AUTOMATIONORBA@automation.pl";
@@ -29,6 +30,7 @@ public class OrbaTest extends Initial {
     private String message5 = "ORBAAUTOMATION script - ERP Integration";
     private String message6 = "ORBAAUTOMATION script - UX and Analytics";
     private String message7 = "ORBAAUTOMATION script - Dedicated Apps";
+    private String message8 = "ORBAAUTOMATION script - Domain To Be Audited";
 
     @BeforeSuite
     public void setUpBeforeClass() {
@@ -168,7 +170,7 @@ public class OrbaTest extends Initial {
         Builder.perform();
         boolean topBar = true;
         if (topBar) {
-            gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.UXandAnalytics)).click();
+            gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.UXandAnalyticsTab)).click();
         }
         js.executeScript("window.scrollTo(0,4000)");
         PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
@@ -183,7 +185,7 @@ public class OrbaTest extends Initial {
 
     @Test(priority = 8)
     public void dedicatedApps(){
-        System.out.println("...Starting Test 7...");
+        System.out.println("...Starting Test 8...");
         js.executeScript("window.scrollTo(0,-4000)");
         Builder.release();
         Builder.moveToElement(PageObjectPattern.OfferTabMainSite).build().perform();
@@ -191,7 +193,7 @@ public class OrbaTest extends Initial {
         Builder.perform();
         boolean topBar = true;
         if (topBar) {
-            gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.DedicatedApps)).click();
+            gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.DedicatedAppsTab)).click();
         }
         js.executeScript("window.scrollTo(0,4000)");
         PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
@@ -202,6 +204,30 @@ public class OrbaTest extends Initial {
         PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
         PageObjectPattern.OrderAQuotationB2BOfferTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
+    }
+
+    @Test(priority = 9)
+    public void newsLetter(){
+        System.out.println("...Starting Test 9...");
+        js.executeScript("window.scrollTo(0,9000)");
+        PageObjectPattern.NewsLetterEmailField.sendKeys(emailAdress);
+        PageObjectPattern.YourConsentNewsletter.click();
+        PageObjectPattern.SignUpButton.click();
+        Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.ConfirmationTabNewsletter, "Confirm your e-mail in your e-mail client. Thank you!"));
+    }
+
+    @Test(priority = 10)
+    public void userExpierienceAudit(){
+        System.out.println("...Starting Test 10...");
+        driver.get(urlAddress3);
+        js.executeScript("window.scrollTo(0,1000)");
+        PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
+        PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
+        PageObjectPattern.DomainToBeAuditedField.sendKeys(message8);
+        PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message8);
+        Builder.moveToElement(PageObjectPattern.ConsentUserExpierienceAuditTab).click();
+        Builder.perform();
+        /*PageObjectPattern.ConsentUserExpierienceAuditTab.click();*/
     }
 }
 

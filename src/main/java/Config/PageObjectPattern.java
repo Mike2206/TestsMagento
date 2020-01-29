@@ -61,9 +61,26 @@ public class PageObjectPattern extends Initial {
 
     //UX and Analytics
     @FindBy(xpath = "//*[@id=\"nav\"]/div/div/div/ul/li[1]/div/ul/li[5]/a")
-    public WebElement UXandAnalytics;
+    public WebElement UXandAnalyticsTab;
 
     //Dedicated Apps
     @FindBy(xpath = "//*[@id=\"nav\"]/div/div/div/ul/li[1]/div/ul/li[6]/a")
-    public WebElement DedicatedApps;
+    public WebElement DedicatedAppsTab;
+
+    //Newletter
+    @FindBy(xpath = "//*[@id=\"wpcf7-f930-o2\"]/form/div[2]/span[1]/input")
+    public WebElement NewsLetterEmailField;
+    @FindBy(xpath = "//*[@id=\"wpcf7-f930-o2\"]/form/div[3]/span/span/span/label/input")
+    public WebElement YourConsentNewsletter;
+    @FindBy(xpath = "//*[@id=\"wpcf7-f930-o2\"]/form/div[2]/input")
+    public WebElement SignUpButton;
+    @FindBy(xpath = "//*[@id=\"wpcf7-f930-o2\"]/form/div[4]")
+    public WebElement ConfirmationTabNewsletter;
+
+    //UserExpireinceAudit
+    @FindBy(xpath = "//*[@id=\"domain\"]")
+    public WebElement DomainToBeAuditedField;
+    @FindBy(xpath = "//*[@id=\"wpcf7-f2471-o1\"]/form/div[6]/span/span/span/label/input")
+    public WebElement ConsentUserExpierienceAuditTab;
+
 }
