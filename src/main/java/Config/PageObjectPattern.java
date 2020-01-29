@@ -62,4 +62,8 @@ public class PageObjectPattern extends Initial {
     //UX and Analytics
     @FindBy(xpath = "//*[@id=\"nav\"]/div/div/div/ul/li[1]/div/ul/li[5]/a")
     public WebElement UXandAnalytics;
+
+    //Dedicated Apps
+    @FindBy(xpath = "//*[@id=\"nav\"]/div/div/div/ul/li[1]/div/ul/li[6]/a")
+    public WebElement DedicatedApps;
 }

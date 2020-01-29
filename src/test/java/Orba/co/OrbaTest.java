@@ -27,6 +27,7 @@ public class OrbaTest extends Initial {
     private String message3 = "ORBAAUTOMATION script - B2B Offer";
     private String message4 = "ORBAAUTOMATION script - B2C Offer";
     private String message5 = "ORBAAUTOMATION script - ERP Integration";
+    private String message6 = "ORBAAUTOMATION script - Dedicated apps";
 
     @BeforeSuite
     public void setUpBeforeClass() {
@@ -174,6 +175,29 @@ public class OrbaTest extends Initial {
         PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
         PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
         PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message5);
+        PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
+        PageObjectPattern.OrderAQuotationB2BOfferTab.click();
+        Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
+    }
+
+    @Test(priority = 8)
+    public void dedicatedApps(){
+        System.out.println("...Starting Test 7...");
+        js.executeScript("window.scrollTo(0,-4000)");
+        Builder.release();
+        Builder.moveToElement(PageObjectPattern.OfferTabMainSite).build().perform();
+        Builder.clickAndHold(PageObjectPattern.OfferTabMainSite);
+        Builder.perform();
+        boolean topBar = true;
+        if (topBar) {
+            gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.DedicatedApps)).click();
+        }
+        js.executeScript("window.scrollTo(0,4000)");
+        PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
+        PageObjectPattern.YourCompanyFieldOrderAQuoteTab.sendKeys(userCompany);
+        PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
+        PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
+        PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message6);
         PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
         PageObjectPattern.OrderAQuotationB2BOfferTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
