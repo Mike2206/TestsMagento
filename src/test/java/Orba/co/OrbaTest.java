@@ -22,12 +22,13 @@ public class OrbaTest extends Initial {
     private String userCompany = "AUTOMATIONORBA";
     private String emailAdress = "AUTOMATIONORBA@automation.pl";
     private String yourPhone = "444555666";
-    private String message1 = "ORBAAUTOMATION script - Order a quote";
-    private String message2 = "ORBAAUTOMATION script - Contact us";
+    private String message1 = "ORBAAUTOMATION script - Order a Quote";
+    private String message2 = "ORBAAUTOMATION script - Contact Us";
     private String message3 = "ORBAAUTOMATION script - B2B Offer";
     private String message4 = "ORBAAUTOMATION script - B2C Offer";
     private String message5 = "ORBAAUTOMATION script - ERP Integration";
-    private String message6 = "ORBAAUTOMATION script - Dedicated apps";
+    private String message6 = "ORBAAUTOMATION script - UX and Analytics";
+    private String message7 = "ORBAAUTOMATION script - Dedicated Apps";
 
     @BeforeSuite
     public void setUpBeforeClass() {
@@ -174,7 +175,7 @@ public class OrbaTest extends Initial {
         PageObjectPattern.YourCompanyFieldOrderAQuoteTab.sendKeys(userCompany);
         PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
         PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
-        PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message5);
+        PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message6);
         PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
         PageObjectPattern.OrderAQuotationB2BOfferTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
@@ -197,7 +198,7 @@ public class OrbaTest extends Initial {
         PageObjectPattern.YourCompanyFieldOrderAQuoteTab.sendKeys(userCompany);
         PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
         PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
-        PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message6);
+        PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message7);
         PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
         PageObjectPattern.OrderAQuotationB2BOfferTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
