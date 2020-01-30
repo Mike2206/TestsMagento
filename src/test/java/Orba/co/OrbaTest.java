@@ -73,8 +73,7 @@ public class OrbaTest extends Initial {
     @Test(priority = 3)
     public void contactUs() {
         System.out.println("...Starting Test 3...");
-        driver.get((urlAddress1));
-        Assert.assertTrue(GlobalMethods.testTittle("Home - Orba"));
+        PageObjectPattern.PricingModalCloseButton.click();
         PageObjectPattern.ContactUsButtonMainPage.click();
         boolean cookie = true;
         if (cookie) {
@@ -239,8 +238,7 @@ public class OrbaTest extends Initial {
         PageObjectPattern.RequestUxAuditButton.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.ConfirmationTabUserExpierienceAudit, "Your message has been sent. Thank you!"));
     }
-
-    @Test(priority = 11)
+    /*@Test(priority = 11)
     public void checkTittle2() {
         System.out.println("...Starting Test 11...");
         driver.get(urlAddress2);
@@ -255,19 +253,22 @@ public class OrbaTest extends Initial {
     @Test(priority = 12)
     public void orderAQuote2() {
         System.out.println("...Starting Test 12...");
-        js.executeScript("window.scrollTo(0,1000)");
         PageObjectPattern.OrderAQuoteButtonMainSite.click();
         PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
         PageObjectPattern.YourCompanyFieldOrderAQuoteTab.sendKeys(userCompany);
         PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
         PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
         PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message1);
-        PageObjectPattern.YourConsentCheckbox.click();
-        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
         js.executeScript("document.getElementById('pricing-modal').scrollTo(0,500)");
-        PageObjectPattern.OrderAQuotationButton.click();
-        Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.MessageAfterOrderOrderAQuoteTab, "Your message has been sent. Thank you!"));
-    }
+        *//*gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.YourConsentCheckBoxWersjaPolska));*//*
+        *//*PageObjectPattern.YourConsentCheckBoxWersjaPolska.click();*//*
+        Builder.release();
+        Builder.moveToElement(PageObjectPattern.YourConsentCheckBoxWersjaPolska);
+        Builder.clickAndHold(PageObjectPattern.YourConsentCheckBoxWersjaPolska);
+        Builder.perform();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckBoxWersjaPolska.isEnabled());
+        *//*PageObjectPattern.OrderAQuotationButton.click();
+        Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.MessageAfterOrderOrderAQuoteTab, "Your message has been sent. Thank you!"));*//*
+    }*/
 }
-
 

@@ -38,6 +38,8 @@ public class PageObjectPattern extends Initial {
     public WebElement SendMessageButtonContactUsTab;
     @FindBy(xpath = "//*[@id=\"wpcf7-f1405-o1\"]//div[contains(@class, 'wpcf7-response-output')]")
     public WebElement SendMessageContactUsTab;
+    @FindBy(xpath = "//*[@id=\"pricing-modal\"]/div/div[1]/button")
+    public WebElement PricingModalCloseButton;
 
     //B2B Offer
     @FindBy(xpath = "//*[@id=\"nav\"]/div/div/div/ul/li[1]/a")
@@ -86,4 +88,8 @@ public class PageObjectPattern extends Initial {
     public WebElement RequestUxAuditButton;
     @FindBy(xpath = "//*[@id=\"wpcf7-f2471-o1\"]/form/div[8]")
     public WebElement ConfirmationTabUserExpierienceAudit;
+
+    //Order a Quote - wersja polska
+    @FindBy(xpath = "//div[@id=\"pricing-modal\"]//*[@id=\"wpcf7-f10-o2\"]/form/div[7]/span/span/span/label/input")
+    public WebElement YourConsentCheckBoxWersjaPolska;
 }
