@@ -89,6 +89,7 @@ public class OrbaTest extends Initial {
         js.executeScript("window.scrollTo(0,500)");
         Builder.moveToElement(PageObjectPattern.YourConsentCheckbox).click();
         Builder.perform();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
         PageObjectPattern.SendMessageButtonContactUsTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SendMessageContactUsTab, "Your message has been sent. Thank you"));
     }
@@ -111,6 +112,7 @@ public class OrbaTest extends Initial {
         PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message3);
         js.executeScript("window.scrollTo(0,5000)");
         PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
         PageObjectPattern.OrderAQuotationB2BOfferTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
     }
@@ -133,6 +135,7 @@ public class OrbaTest extends Initial {
         PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message4);
         js.executeScript("window.scrollTo(0,4000)");
         PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
         PageObjectPattern.OrderAQuotationB2BOfferTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
     }
@@ -156,6 +159,7 @@ public class OrbaTest extends Initial {
         PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
         PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message5);
         PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
         PageObjectPattern.OrderAQuotationB2BOfferTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
     }
@@ -179,6 +183,7 @@ public class OrbaTest extends Initial {
         PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
         PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message6);
         PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
         PageObjectPattern.OrderAQuotationB2BOfferTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
     }
@@ -202,6 +207,7 @@ public class OrbaTest extends Initial {
         PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
         PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message7);
         PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
         PageObjectPattern.OrderAQuotationB2BOfferTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
     }
@@ -212,6 +218,7 @@ public class OrbaTest extends Initial {
         js.executeScript("window.scrollTo(0,9000)");
         PageObjectPattern.NewsLetterEmailField.sendKeys(emailAdress);
         PageObjectPattern.YourConsentNewsletter.click();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
         PageObjectPattern.SignUpButton.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.ConfirmationTabNewsletter, "Confirm your e-mail in your e-mail client. Thank you!"));
     }
@@ -228,9 +235,38 @@ public class OrbaTest extends Initial {
         Builder.release();
         Builder.moveToElement(PageObjectPattern.ConsentUserExpierienceAuditTab).click();
         Builder.perform();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
         PageObjectPattern.RequestUxAuditButton.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.ConfirmationTabUserExpierienceAudit, "Your message has been sent. Thank you!"));
     }
+
+    @Test(priority = 11)
+    public void checkTittle2() {
+        System.out.println("...Starting Test 11...");
+        driver.get(urlAddress2);
+        Assert.assertTrue(GlobalMethods.testTittle("Strona główna - Orba by Lingaro"));
+        boolean cookie = true;
+        if (cookie) {
+            gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.CookieDisclaimerAcceptButton)).click();
+            System.out.println("Cookie Disclaimer zamknięty prawidłowo");
+        }
+    }
+
+    /*@Test(priority = 2)
+    public void orderAQuote2() {
+        System.out.println("...Starting Test 12...");
+        PageObjectPattern.OrderAQuoteButtonMainSite.click();
+        PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
+        PageObjectPattern.YourCompanyFieldOrderAQuoteTab.sendKeys(userCompany);
+        PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
+        PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
+        PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message1);
+        PageObjectPattern.YourConsentCheckbox.click();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
+        js.executeScript("document.getElementById('pricing-modal').scrollTo(0,500)");
+        PageObjectPattern.OrderAQuotationButton.click();
+        Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.MessageAfterOrderOrderAQuoteTab, "Your message has been sent. Thank you!"));
+    }*/
 }
 
 
