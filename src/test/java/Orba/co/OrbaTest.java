@@ -252,9 +252,10 @@ public class OrbaTest extends Initial {
         }
     }
 
-    /*@Test(priority = 2)
+    @Test(priority = 12)
     public void orderAQuote2() {
         System.out.println("...Starting Test 12...");
+        js.executeScript("window.scrollTo(0,1000)");
         PageObjectPattern.OrderAQuoteButtonMainSite.click();
         PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
         PageObjectPattern.YourCompanyFieldOrderAQuoteTab.sendKeys(userCompany);
@@ -266,7 +267,7 @@ public class OrbaTest extends Initial {
         js.executeScript("document.getElementById('pricing-modal').scrollTo(0,500)");
         PageObjectPattern.OrderAQuotationButton.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.MessageAfterOrderOrderAQuoteTab, "Your message has been sent. Thank you!"));
-    }*/
+    }
 }
 
 
