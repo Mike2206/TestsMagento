@@ -238,7 +238,7 @@ public class OrbaTest extends Initial {
         PageObjectPattern.RequestUxAuditButton.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.ConfirmationTabUserExpierienceAudit, "Your message has been sent. Thank you!"));
     }
-    /*@Test(priority = 11)
+    @Test(priority = 11)
     public void checkTittle2() {
         System.out.println("...Starting Test 11...");
         driver.get(urlAddress2);
@@ -260,15 +260,11 @@ public class OrbaTest extends Initial {
         PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
         PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message1);
         js.executeScript("document.getElementById('pricing-modal').scrollTo(0,500)");
-        *//*gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.YourConsentCheckBoxWersjaPolska));*//*
-        *//*PageObjectPattern.YourConsentCheckBoxWersjaPolska.click();*//*
-        Builder.release();
-        Builder.moveToElement(PageObjectPattern.YourConsentCheckBoxWersjaPolska);
-        Builder.clickAndHold(PageObjectPattern.YourConsentCheckBoxWersjaPolska);
+        Builder.moveToElement(PageObjectPattern.YourConsentCheckBoxWersjaPolska).click().build().perform();
         Builder.perform();
         Assert.assertTrue(PageObjectPattern.YourConsentCheckBoxWersjaPolska.isEnabled());
-        *//*PageObjectPattern.OrderAQuotationButton.click();
-        Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.MessageAfterOrderOrderAQuoteTab, "Your message has been sent. Thank you!"));*//*
-    }*/
+        PageObjectPattern.OrderAQuotationButton.click();
+        /*Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.MessageAfterOrderOrderAQuoteTab, "Twoja wiadomość została wysłana. Dziękujemy!"));*/
+    }
 }
 
