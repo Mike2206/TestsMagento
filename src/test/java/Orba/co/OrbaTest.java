@@ -225,9 +225,11 @@ public class OrbaTest extends Initial {
         PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
         PageObjectPattern.DomainToBeAuditedField.sendKeys(message8);
         PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message8);
+        Builder.release();
         Builder.moveToElement(PageObjectPattern.ConsentUserExpierienceAuditTab).click();
         Builder.perform();
-        /*PageObjectPattern.ConsentUserExpierienceAuditTab.click();*/
+        PageObjectPattern.RequestUxAuditButton.click();
+        Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.ConfirmationTabUserExpierienceAudit, "Your message has been sent. Thank you!"));
     }
 }
 

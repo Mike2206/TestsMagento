@@ -82,5 +82,8 @@ public class PageObjectPattern extends Initial {
     public WebElement DomainToBeAuditedField;
     @FindBy(xpath = "//*[@id=\"wpcf7-f2471-o1\"]/form/div[6]/span/span/span/label/input")
     public WebElement ConsentUserExpierienceAuditTab;
-
+    @FindBy(xpath = "/html/body/div[4]/div/div[5]/div[2]/div/form/div[7]/input")
+    public WebElement RequestUxAuditButton;
+    @FindBy(xpath = "//*[@id=\"wpcf7-f2471-o1\"]/form/div[8]")
+    public WebElement ConfirmationTabUserExpierienceAudit;
 }
