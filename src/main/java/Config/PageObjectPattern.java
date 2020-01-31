@@ -94,4 +94,10 @@ public class PageObjectPattern extends Initial {
     public WebElement YourConsentCheckBoxWersjaPolska;
     @FindBy(xpath = "/html/body/div[7]/div/div[1]/div/div/form/div[10]")
     public WebElement ConfirmationMessageZamowWycene;
+
+    //Kontakt
+    @FindBy(xpath = "//*[@id=\"nav\"]/div/div/div/ul/li[7]/a")
+    public WebElement KontaktTabPolishVersion;
+    @FindBy(xpath = "/html/body/section[1]/div/div[2]/div/div[2]/input")
+    public WebElement PrzyciskWyslijWiadomoscKontaktTab;
 }
