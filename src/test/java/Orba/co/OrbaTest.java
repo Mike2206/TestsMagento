@@ -261,7 +261,6 @@ public class OrbaTest extends Initial {
         PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message1);
         js.executeScript("document.getElementById('pricing-modal').scrollTo(0,500)");
         Builder.moveToElement(PageObjectPattern.YourConsentCheckBoxWersjaPolska).click().build().perform();
-        Builder.perform();
         Assert.assertTrue(PageObjectPattern.YourConsentCheckBoxWersjaPolska.isEnabled());
         PageObjectPattern.OrderAQuotationButton.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.ConfirmationMessageZamowWycene, "Twoja wiadomość została wysłana. Dziękujemy!"));
