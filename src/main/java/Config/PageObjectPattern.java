@@ -92,4 +92,6 @@ public class PageObjectPattern extends Initial {
     //Order a Quote - wersja polska
     @FindBy(xpath = "//div[@id=\"pricing-modal\"]//*[@id=\"wpcf7-f10-o2\"]/form/div[7]/span/span/span/label/input")
     public WebElement YourConsentCheckBoxWersjaPolska;
+    @FindBy(xpath = "/html/body/div[7]/div/div[1]/div/div/form/div[10]")
+    public WebElement ConfirmationMessageZamowWycene;
 }

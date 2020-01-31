@@ -264,7 +264,7 @@ public class OrbaTest extends Initial {
         Builder.perform();
         Assert.assertTrue(PageObjectPattern.YourConsentCheckBoxWersjaPolska.isEnabled());
         PageObjectPattern.OrderAQuotationButton.click();
-        /*Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.MessageAfterOrderOrderAQuoteTab, "Twoja wiadomość została wysłana. Dziękujemy!"));*/
+        Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.ConfirmationMessageZamowWycene, "Twoja wiadomość została wysłana. Dziękujemy!"));
     }
 }
 
