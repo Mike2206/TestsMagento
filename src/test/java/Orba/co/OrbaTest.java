@@ -116,6 +116,7 @@ public class OrbaTest extends Initial {
         PageObjectPattern.OrderAQuotationB2BOfferTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
     }
+
     @Test(priority = 5)
     public void b2cOffer() {
         System.out.println("...Starting Test 5...");
@@ -278,11 +279,44 @@ public class OrbaTest extends Initial {
         PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
         PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message2);
         js.executeScript("window.scrollTo(0,500)");
-        Builder.moveToElement(PageObjectPattern.YourConsentCheckbox).click();
-        Builder.perform();
+        Builder.moveToElement(PageObjectPattern.YourConsentCheckbox).click().build().perform();
         Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
         PageObjectPattern.PrzyciskWyslijWiadomoscKontaktTab.click();
         js.executeScript("window.scrollTo(0,-500)");
+    }
+
+    @Test(priority = 14)
+    public void b2bOffer2() {
+        System.out.println("...Starting Test 14...");
+        Builder.release();
+        Builder.moveToElement(PageObjectPattern.OfferTabMainSite).build().perform();
+        boolean topBar = true;
+        if (topBar) {
+            gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.ECommerceB2BTab)).click();
+        }
+        PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
+        PageObjectPattern.YourCompanyFieldOrderAQuoteTab.sendKeys(userCompany);
+        PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
+        PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
+        PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message3);
+        js.executeScript("window.scrollTo(0,5000)");
+        PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
+        PageObjectPattern.OrderAQuotationB2BOfferTab.click();
+        Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BOferta, "Twoja wiadomość została wysłana. Dziękujemy!"));
+    }
+
+    @Test(priority = 15)
+    public void b2cOffer2() {
+        System.out.println("...Starting Test 15...");
+        Builder.release();
+        Builder.moveToElement(PageObjectPattern.OfferTabMainSite);
+        Builder.clickAndHold(PageObjectPattern.OfferTabMainSite);
+        Builder.perform();
+        boolean topBar = true;
+        if (topBar) {
+            gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.ECommerceB2CTab)).click();
+        }
     }
 }
 

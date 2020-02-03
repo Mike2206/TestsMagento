@@ -100,4 +100,8 @@ public class PageObjectPattern extends Initial {
     public WebElement KontaktTabPolishVersion;
     @FindBy(xpath = "/html/body/section[1]/div/div[2]/div/div[2]/input")
     public WebElement PrzyciskWyslijWiadomoscKontaktTab;
+
+    //B2B Oferta
+    @FindBy(xpath = "//*[@id=\"wpcf7-f10-o1\"]//div[contains(@class, 'wpcf7-response-output')]")
+    public WebElement SentMessageConfirmationB2BOferta;
 }
