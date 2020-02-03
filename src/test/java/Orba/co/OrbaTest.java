@@ -370,7 +370,6 @@ public class OrbaTest extends Initial {
             Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
             PageObjectPattern.SendButtonErpIntegracja.click();
             Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BOferta, "Twoja wiadomość została wysłana. Dziękujemy!"));
-
     }
 }
 
