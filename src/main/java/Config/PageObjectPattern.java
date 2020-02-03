@@ -104,4 +104,6 @@ public class PageObjectPattern extends Initial {
     //B2B Oferta
     @FindBy(xpath = "//*[@id=\"wpcf7-f10-o1\"]//div[contains(@class, 'wpcf7-response-output')]")
     public WebElement SentMessageConfirmationB2BOferta;
+    @FindBy(xpath = "//*[@id=\"wpcf7-f10-o1\"]/form/div[9]/input")
+    public WebElement SendButtonErpIntegracja;
 }

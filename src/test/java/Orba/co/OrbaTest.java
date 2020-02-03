@@ -241,7 +241,7 @@ public class OrbaTest extends Initial {
     }*/
 
     @Test(priority = 11)
-    public void checkTittle2() {
+    public void checkTittlePL() {
         System.out.println("...Starting Test 11...");
         driver.get(urlAddress2);
         Assert.assertTrue(GlobalMethods.testTittle("Strona główna - Orba by Lingaro"));
@@ -253,7 +253,7 @@ public class OrbaTest extends Initial {
     }
 
     @Test(priority = 12)
-    public void orderAQuote2() {
+    public void orderAQuotePL() {
         System.out.println("...Starting Test 12...");
         PageObjectPattern.OrderAQuoteButtonMainSite.click();
         PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
@@ -270,7 +270,7 @@ public class OrbaTest extends Initial {
     }
 
     @Test(priority = 13)
-    public void contactUs2() {
+    public void contactUsPL() {
         System.out.println("...Starting Test 13...");
         PageObjectPattern.KontaktTabPolishVersion.click();
         PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
@@ -286,7 +286,7 @@ public class OrbaTest extends Initial {
     }
 
     @Test(priority = 14)
-    public void b2bOffer2() {
+    public void b2bOfferPL() {
         System.out.println("...Starting Test 14...");
         Builder.release();
         Builder.moveToElement(PageObjectPattern.OfferTabMainSite).build().perform();
@@ -307,16 +307,70 @@ public class OrbaTest extends Initial {
     }
 
     @Test(priority = 15)
-    public void b2cOffer2() {
+    public void b2cOfferPL() {
         System.out.println("...Starting Test 15...");
         Builder.release();
-        Builder.moveToElement(PageObjectPattern.OfferTabMainSite);
-        Builder.clickAndHold(PageObjectPattern.OfferTabMainSite);
+        Builder.moveToElement(PageObjectPattern.OfferTabMainSite).clickAndHold();
         Builder.perform();
         boolean topBar = true;
         if (topBar) {
             gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.ECommerceB2CTab)).click();
         }
+        PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
+        PageObjectPattern.YourCompanyFieldOrderAQuoteTab.sendKeys(userCompany);
+        PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
+        PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
+        PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message4);
+        js.executeScript("window.scrollTo(0,4000)");
+        PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
+        PageObjectPattern.OrderAQuotationB2BOfferTab.click();
+        Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BOferta, "Twoja wiadomość została wysłana. Dziękujemy!"));
+    }
+
+    @Test(priority = 16)
+    public void erpIntegration() {
+        System.out.println("...Starting Test 16...");
+        Builder.release();
+        Builder.moveToElement(PageObjectPattern.OfferTabMainSite).clickAndHold();
+        Builder.perform();
+        boolean topBar = true;
+        if (topBar) {
+            gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.ERPIntergrationTab)).click();
+        }
+        PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
+        PageObjectPattern.YourCompanyFieldOrderAQuoteTab.sendKeys(userCompany);
+        PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
+        PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
+        PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message5);
+        js.executeScript("window.scrollTo(0,4000)");
+        PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
+        Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
+        PageObjectPattern.SendButtonErpIntegracja.click();
+        Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BOferta, "Twoja wiadomość została wysłana. Dziękujemy!"));
+    }
+
+    @Test(priority = 17)
+    public void uXandAnalyticsPL() {
+        System.out.println("...Starting Test 17...");
+        Builder.release();
+        Builder.moveToElement(PageObjectPattern.OfferTabMainSite).clickAndHold();
+        Builder.perform();
+        boolean topBar = true;
+        if (topBar) {
+            gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.UXandAnalyticsTab)).click();
+        }
+            PageObjectPattern.YourNameFieldOrderAQuoteTab.sendKeys(userName);
+            PageObjectPattern.YourCompanyFieldOrderAQuoteTab.sendKeys(userCompany);
+            PageObjectPattern.EmailFieldOrderAQuoteTab.sendKeys(emailAdress);
+            PageObjectPattern.YourPhoneFieldOrderAQuoteTab.sendKeys(yourPhone);
+            PageObjectPattern.MessageFieldOrderAQuoteTab.sendKeys(message5);
+            js.executeScript("window.scrollTo(0,4000)");
+            PageObjectPattern.YourConsentCheckboxB2BOfferTab.click();
+            Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
+            PageObjectPattern.SendButtonErpIntegracja.click();
+            Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BOferta, "Twoja wiadomość została wysłana. Dziękujemy!"));
+
     }
 }
 
