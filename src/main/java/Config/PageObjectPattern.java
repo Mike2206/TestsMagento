@@ -106,4 +106,14 @@ public class PageObjectPattern extends Initial {
     public WebElement SentMessageConfirmationB2BOferta;
     @FindBy(xpath = "//*[@id=\"wpcf7-f10-o1\"]/form/div[9]/input")
     public WebElement SendButtonErpIntegracja;
+
+    //NewsletterPolska
+    @FindBy(xpath = "//*[@id=\"wpcf7-f699-o2\"]/form/div[2]/span[1]/input")
+    public WebElement NewsLetterEmailFieldPL;
+    @FindBy(xpath = "//*[@id=\"wpcf7-f699-o2\"]/form/div[3]/span/span/span/label/input")
+    public WebElement YourConsentNewsletterPL;
+    @FindBy(xpath = "//*[@id=\"wpcf7-f699-o2\"]/form/div[2]/input")
+    public WebElement SignUpButtonPL;
+    @FindBy(xpath = "//*[@id=\"wpcf7-f699-o2\"]/form/div[4]")
+    public WebElement ConfirmationTabNewsletterPL;
 }
