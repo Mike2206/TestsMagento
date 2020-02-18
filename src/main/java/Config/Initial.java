@@ -20,5 +20,6 @@ public class Initial {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         gWait = new WebDriverWait(driver, 20);
         js = (JavascriptExecutor) driver;
+
     }
 }

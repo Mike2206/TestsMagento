@@ -22,6 +22,7 @@ public class GlobalMethods extends Initial {
             System.out.println("Tittle is incorrect");
         }
         return result;
+
     }
 
     public boolean textInElement(WebElement element, String text) {

@@ -116,4 +116,5 @@ public class PageObjectPattern extends Initial {
     public WebElement SignUpButtonPL;
     @FindBy(xpath = "//*[@id=\"wpcf7-f699-o2\"]/form/div[4]")
     public WebElement ConfirmationTabNewsletterPL;
+
 }

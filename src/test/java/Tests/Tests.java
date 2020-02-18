@@ -5,9 +5,7 @@ import Config.PageObjectPattern;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class Tests extends Initial {
     //Config
@@ -32,7 +30,7 @@ public class Tests extends Initial {
     private String message7 = "ORBAAUTOMATION script - Dedicated Apps";
     private String message8 = "ORBAAUTOMATION script - Domain To Be Audited";
 
-    @BeforeSuite
+    @BeforeTest
     public void setUpBeforeClass() {
         invokeBrowser();
         Builder = new Actions(driver);
@@ -41,10 +39,10 @@ public class Tests extends Initial {
         PageObjectPattern = new PageObjectPattern();
     }
 
-    @AfterSuite
+    @AfterTest
     public void tearDown() {
         driver.manage().deleteAllCookies();
-        //driver.close();
+        driver.close();
     }
 
     @Test(priority = 1)
