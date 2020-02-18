@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="OrbaSelenium" />
+        <module name="Selenium" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="OrbaSelenium" target="1.5" />
+      <module name="Selenium" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
