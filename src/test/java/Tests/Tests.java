@@ -1,4 +1,4 @@
-package Orba.co;
+package Tests;
 import Config.GlobalMethods;
 import Config.Initial;
 import Config.PageObjectPattern;
@@ -9,16 +9,16 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-public class OrbaTestCO extends Initial {
+public class Tests extends Initial {
     //Config
-    private OrbaTestCO OrbaTestCO;
+    private Tests OrbaTestCO;
     private Config.GlobalMethods GlobalMethods;
     private Config.PageObjectPattern PageObjectPattern;
     private Actions Builder;
     //Wariables
-    private String urlAddress1 = "https://orba.co/";
-    private String urlAddress2 = "https://orba.pl/";
-    private String urlAddress3 = "https://orba.co/user-experience-audit/";
+    private String urlAddress1 = "";
+    private String urlAddress2 = "";
+    private String urlAddress3 = "";
     private String userName = "AUTOMATIONORBA";
     private String userCompany = "AUTOMATIONORBA";
     private String emailAdress = "AUTOMATIONORBA@automation.pl";
@@ -36,7 +36,7 @@ public class OrbaTestCO extends Initial {
     public void setUpBeforeClass() {
         invokeBrowser();
         Builder = new Actions(driver);
-        OrbaTestCO = new OrbaTestCO();
+        OrbaTestCO = new Tests();
         GlobalMethods = new GlobalMethods();
         PageObjectPattern = new PageObjectPattern();
     }

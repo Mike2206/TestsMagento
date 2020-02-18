@@ -9,5 +9,8 @@
         <module name="OrbaSelenium" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="OrbaSelenium" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
