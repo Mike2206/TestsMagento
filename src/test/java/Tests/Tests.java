@@ -151,6 +151,7 @@ public class Tests extends Initial {
         Assert.assertTrue(PageObjectPattern.YourConsentCheckbox.isEnabled());
         PageObjectPattern.OrderAQuotationB2BOfferTab.click();
         Assert.assertTrue(GlobalMethods.textInElement(PageObjectPattern.SentMessageConfirmationB2BTab, "Your message has been sent. Thank you!"));
+
     }
 
     @Test(priority = 7)
