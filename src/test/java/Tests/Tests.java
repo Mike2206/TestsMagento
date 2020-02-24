@@ -9,7 +9,6 @@ import org.testng.annotations.*;
 
 public class Tests extends Initial {
     //Config
-    private Tests OrbaTestCO;
     private Config.GlobalMethods GlobalMethods;
     private Config.PageObjectPattern PageObjectPattern;
     private Actions Builder;
@@ -17,24 +16,23 @@ public class Tests extends Initial {
     private String urlAddress1 = "";
     private String urlAddress2 = "";
     private String urlAddress3 = "";
-    private String userName = "AUTOMATIONORBA";
-    private String userCompany = "AUTOMATIONORBA";
-    private String emailAdress = "AUTOMATIONORBA@automation.pl";
+    private String userName = "AUTOMATION";
+    private String userCompany = "AUTOMATION";
+    private String emailAdress = "AUTOMATION@automation.pl";
     private String yourPhone = "444555666";
-    private String message1 = "ORBAAUTOMATION script - Order a Quote";
-    private String message2 = "ORBAAUTOMATION script - Contact Us";
-    private String message3 = "ORBAAUTOMATION script - B2B Offer";
-    private String message4 = "ORBAAUTOMATION script - B2C Offer";
-    private String message5 = "ORBAAUTOMATION script - ERP Integration";
-    private String message6 = "ORBAAUTOMATION script - UX and Analytics";
-    private String message7 = "ORBAAUTOMATION script - Dedicated Apps";
-    private String message8 = "ORBAAUTOMATION script - Domain To Be Audited";
+    private String message1 = "AUTOMATION script - Order a Quote";
+    private String message2 = "AUTOMATION script - Contact Us";
+    private String message3 = "AUTOMATION script - B2B Offer";
+    private String message4 = "AUTOMATION script - B2C Offer";
+    private String message5 = "AUTOMATION script - ERP Integration";
+    private String message6 = "AUTOMATION script - UX and Analytics";
+    private String message7 = "AUTOMATION script - Dedicated Apps";
+    private String message8 = "AUTOMATION script - Domain To Be Audited";
 
     @BeforeTest
     public void setUpBeforeClass() {
         invokeBrowser();
         Builder = new Actions(driver);
-        OrbaTestCO = new Tests();
         GlobalMethods = new GlobalMethods();
         PageObjectPattern = new PageObjectPattern();
     }
@@ -49,7 +47,7 @@ public class Tests extends Initial {
     public void checkTittle() {
         System.out.println("...Starting Test 1...");
         driver.get(urlAddress1);
-        Assert.assertTrue(GlobalMethods.testTittle("Home - Orba"));
+        Assert.assertTrue(GlobalMethods.testTittle(""));
     }
 
     @Test(priority = 2)
@@ -224,7 +222,7 @@ public class Tests extends Initial {
     public void checkTittlePL() {
         System.out.println("...Starting Test 11...");
         driver.get(urlAddress2);
-        Assert.assertTrue(GlobalMethods.testTittle("Strona główna - Orba by Lingaro"));
+        Assert.assertTrue(GlobalMethods.testTittle(""));
         boolean cookie = true;
         if (cookie) {
             gWait.until(ExpectedConditions.visibilityOf(PageObjectPattern.CookieDisclaimerAcceptButton)).click();
